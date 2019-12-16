@@ -1,0 +1,47 @@
+{
+  "name": "cf_project_v1",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Wild Ruby Users",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "Oscar",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"No test specified\" && exit 0",
+    "start": "http-server -c-1",
+    "prebuild": "rimraf dist && node generateBuildConfig.js && node copy-config.js",
+    "build": "quasar build",
+    "predev": "node generateBuildConfig.js && node copy-config.js dev",
+    "dev": "quasar dev",
+    "package": "tar czf build.tar.gz dist/spa"
+  },
+  "dependencies": {
+    "@cubejs-client/core": "^0.10.16",
+    "@google-cloud/bigquery": "^4.1.8",
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.18.1",
+    "quasar": "^1.0.0-beta.0",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0-beta.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "strip-ansi": "=3.0.1"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ],
+  "resolutions": {
+    "ajv": "6.8.1"
+  }
+}
